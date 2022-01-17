@@ -112,7 +112,7 @@
 
 (defn- to-start-of-week [expr]
   ;; ClickHouse weeks usually start on Monday
-  (hx/- (hsql/call :toMonday (hx/+ (hsql/call :toDate expr) 1)) 1))
+  (hsql/call :toMonday (hsql/call :toDate expr)))
 
 (defn- to-start-of-minute [expr]
   (hsql/call :toStartOfMinute (hsql/call :toDateTime expr)))
