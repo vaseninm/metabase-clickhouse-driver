@@ -75,6 +75,7 @@
        :password                       password
        :user                           user
        :ssl                            (boolean ssl)
+       :socket_timeout                 120000
        :use_server_time_zone_for_dates true}
       (sql-jdbc.common/handle-additional-options details, :separator-style :url)))
 
